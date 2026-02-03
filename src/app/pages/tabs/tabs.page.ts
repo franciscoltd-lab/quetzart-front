@@ -3,8 +3,8 @@ import { IonicModule } from '@ionic/angular';
 
 @Component({
   standalone: true,
-  selector: 'app-root',
+  selector: 'app-tabs',
   imports: [IonicModule],
-  template: `<ion-app><ion-router-outlet></ion-router-outlet></ion-app>`
+  templateUrl: './tabs.page.html'
 })
-export class AppComponent {}
+export class TabsPage {}

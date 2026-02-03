@@ -1,0 +1,68 @@
+Actúa como un arquitecto de software y desarrollador senior fullstack.
+
+
+Quiero que diseñes y propongas una aplicación móvil multiplataforma usando
+Ionic con Angular 19 standalone components como frontend, y un backend desarrollado en Python usando
+FastAPI, SQLAlchemy y una base de datos relacional Mysql. 
+
+### 1. Descripción general del proyecto
+La aplicación se llama: [Quetzart] 
+
+El objetivo principal de la aplicación es:
+Ser una aplicación puente entre establecimientos y artistas para que artistas puedan exponer sus obras de manera gratis en establecimientos físicos y puedan comprarse estas obras, la aplicación sirve para conectar los establecimientos y los artistas para encontrar obras (pinturas actualmente) que se adecuen al establecimiento y gusten al dueño para mostrarlas en sus negocios
+
+
+Los usuarios principales son:
+Establecimientos y Artistas
+Además, se puede ingresar aunque no estés registrado, pero a ciertas vistas. 
+
+### 2. Funcionalidades principales
+La aplicación debe permitir:
+- Manejo de vistas tipo tabs, home, maps, mensajes y  perfil, además de un apartado (campanita) para notificaciones en tiempo real, la cual se mostrará solo a los usuarios registrados
+- La primera vista (HOME) contará con 3 secciones, la primera un buscador para buscar artistas o establecimientos, la segunda será un título (link) que redireccione a otra vista (modal) donde se mostrará un listado de artistas con su foto de perfil circular y su nombre, abajo del link header, se mostrarán unas obras en carusel con swiper (imágenes) de distintos artistas randoms registrados, al hacer click en alguna de estas obras se abrirá un modal con la imagen de la obra, la descripción de la obra, el artista, el precio y un botón para comprar, la última sección será igual que la anterior pero con establecimientos, al hacer click a una imagen del carousel del establecimiento se mostrará la información de este
+	- En la vista de compra donde está el botón para pagar, te mandará a un modal donde vienen los datos de la cuenta bancaria 
+- La segunda vista (MENSAJES), por ahora estará oculta
+- La tercera vista (MAPA) mostrará un mapa de jalisco y se mostrarán las ubicaciones marcadas con un pin de los establecimientos registrados en la app, al hacer clik en uno de los pines, se mostrará la información del establecimiento en un modal o un pop up, además en esta vista se contará con un botón de me gusta cuando los artistas estén registrados y esten logeados, esto se usará para que el establecimiento pueda verificar que un artista está interesado en exponer sus obras en ese establecimiento
+- La última vista, será visible solo para los usuarios registrados, si no está registrado se mostrará una pantalla de registro o login.
+	- Si se está registrado se abre un modal de login
+	- Si no está registrado se abre un modal de selección del tipo de cuenta, esta vista será una pantalla partida a la mitad, la primera mitad tendrá de fondo un background referente a los artistas y la palabra "artista" en medio, la segunda para los establecimientos
+		- Una vez seleccionada el tipo de cuenta se abrirá un formulario para registrarse, los inputs dependerán del tipo de cuenta:
+			- Artistas (Nombre completo, Corriente artística, email, edad, CURP (añadir validación de formato)), contraseña (añadir validador de contraseña segura, mínimo 8 caracteres, con mayúscula, numero y caracter), un resumen, una foto de perfil (opcional) y opcionalmente un apartado para subir múltiples imágenes (portafolio), todos los demás campos son obligatorios, añadir validación del formulario reactivo antes de poder registrar
+			- Establecimiento (Nombre, Calle, número y CP (identificar colonia, municio por CP), categoría del establecimiento(restaurante, cafetería. etc) foto de perfil, añadir validación del formulario, todos los campos son requeridos con excepción de la foto de perfil. validar antes de permitir registrar
+Una vez registrado se mandará al perfil:
+- La vista de perfil tendrá los siguientes datos:
+	- Foto de perfil o de usuario (editable)
+	- Nombre del establecimiento o del artista (editable 1 vez cada 30 días)
+	- Descripción del artista (oculto para perfiles de establecimiento) (editable)
+	- Corriente artística o Categoría del establecimiento, según el tipo de cuenta (editable)
+	- Todo el portafolio o fotos del establecimiento acomodado en mosaico (editable para añadir o eliminar fotos)
+
+### 3. Frontend (Ionic + Angular)
+Para el frontend quiero:
+- Componentes principales
+- Servicios para consumir la API
+- Uso de Ionic UI components
+- Manejo de estado (si aplica)
+
+### 4. Backend (FastAPI)
+Para el backend quiero:
+- Arquitectura del proyecto (routers, schemas, models, services)
+- Endpoints REST bien definidos
+- Autenticación con JWT
+- Validaciones con Pydantic
+- Manejo de excepciones
+
+### 5. Base de datos (SQLAlchemy)
+Define el modelo de datos incluyendo:
+- Diagrama lógico (explicado en texto)
+- Tablas necesarias
+- Relaciones entre tablas
+- Claves primarias y foráneas
+
+### 6. Seguridad y buenas prácticas
+Aplica:
+- Hash de contraseñas
+- Variables de entorno
+- CORS
+- Separación de responsabilidades
+- Buenas prácticas de código

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div *ngIf="!auth.isLoggedIn()">
+    <h2>No has iniciado sesión</h2>
+    <p>Bloque 2 agregará Login/Register completo</p>
+  </div>
+
+  <div *ngIf="auth.isLoggedIn()">
+    <h2>Bienvenido</h2>
+
+    <ion-button expand="block" color="danger" (click)="logout()">
+      Cerrar sesión
+    </ion-button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,24 @@
+ <ion-header>
+      <ion-toolbar>
+        <ion-title>{{ artwork.title }}</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="close()">✖</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+
+      <img [src]="artwork.imageUrl"
+           style="width:100%; border-radius:12px;" />
+
+      <h2>{{ artwork.artistName }}</h2>
+      <p>{{ artwork.description }}</p>
+
+      <h3>${{ artwork.price }}</h3>
+
+      <ion-button expand="block" (click)="buy()">
+        Comprar
+      </ion-button>
+
+    </ion-content>
